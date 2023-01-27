@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import data from "./data";
+
 
 const app = express();
 const port = 5000;
@@ -12,13 +12,6 @@ app.listen(port, () => {
   console.log(`server listening on port: ${port}`);
 });
 
-app.get("/", (req,res, next) => {
+app.get("/", (req,res,) => {
   res.send("Hello Vercel");
-  next();
-})
-
-app.get("/", (req,res) => {
-  if (err) {res.status(404).json(err);} else {
-  res.status(200).json(data);
-}
 })
