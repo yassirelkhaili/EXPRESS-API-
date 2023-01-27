@@ -27,7 +27,11 @@ app.post("/", (req, res) => {
     "INSERT INTO employees (fname, lname, age, pos, email) VALUES (?)";
   db.query(query, [values], (err, data) => {
     if (err) {
-      res.status(404).send(err);
+      res.status(404).send("error my friend");
     } else res.status(200).send("hakuna matata");
   });
 });
+
+app.get("/", (req,res) => {
+res.send("Hello versel")
+})
