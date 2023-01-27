@@ -35,7 +35,7 @@ app.post("/", (req, res) => {
 app.get("/", (req, res) => {
   const query = "SELECT * FROM employees";
   db.query(query, (err, data) => {
-    if (err) return res.status(404).json(err);
+    if (err) return res.status(404).json("get");
     return res.status(200).json(data);
   });
 });
@@ -44,7 +44,7 @@ app.delete("/:id", (req, res) => {
   const id = req.params.id;
   const query = "DELETE FROM employees WHERE id=?";
   db.query(query, [id], (err, data) => {
-    if (err) return res.status(404).json(err);
+    if (err) return res.status(404).json("delete");
     return res.status(200).json("Employee deleted successfully");
   });
 });
@@ -56,7 +56,7 @@ app.put("/:id", (req, res) => {
   const query =
     "UPDATE employees SET fname=?, lname=?, age=?, pos=?, email=? WHERE id=?";
     db.query(query, [...values, id], (err, data) => {
-      if(err) return res.status(404).json("oups something went wrong"); 
+      if(err) return res.status(404).json("put"); 
       return res.status(200).json("hakuna matata");
     })
 });
