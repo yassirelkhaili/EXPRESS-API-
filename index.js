@@ -34,10 +34,7 @@ app.post("/", (req, res) => {
 
 app.get("/", (req, res) => {
   const query = "SELECT * FROM employees";
-  db.query(query, (err, data) => {
-    if (err) return res.status(404).json("get");
-    return res.status(200).json(data);
-  });
+  res.send("lol")
 });
 
 app.delete("/:id", (req, res) => {
