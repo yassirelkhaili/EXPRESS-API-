@@ -12,7 +12,13 @@ app.listen(port, () => {
   console.log(`server listening on port: ${port}`);
 });
 
+app.get("/", (req,res, next) => {
+  res.send("Hello Vercel");
+  next();
+})
+
 app.get("/", (req,res) => {
-  if (err) return res.status(404).json(err);
-  return res.status(200).json(data)
+  if (err) {res.status(404).json(err);} else {
+  res.status(200).json(data);
+}
 })
