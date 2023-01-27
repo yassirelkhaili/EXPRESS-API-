@@ -13,6 +13,5 @@ app.listen(port, () => {
 });
 
 app.get("/", (req,res,) => {
-  res.send("Hello Vercel");
-  res.json(data);
+  res.send("Hello Vercel" + data);
 })
